@@ -4,4 +4,5 @@ from django.db import models
 
 
 class UserProfile(models.Model):
-    image = models.FileField(upload_to="images") # need to tell django about the path in setting.py 
+    image = models.FileField(upload_to="images")
+    # need to tell django about the path in setting.py

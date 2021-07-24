@@ -12,6 +12,7 @@ from .models import UserProfile
 #             dest.write(chunk)
 
 
+# method 1
 class CreateProfileView(View):
     def get(self, request):
         form = ProfileForm()
