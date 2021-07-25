@@ -131,3 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = BASE_DIR / "uplodes"
 MEDIA_URL = "/user-media/"
+
+# session age by default it is 2 weeks here 12 means session will continue for 2 mins
+
+# SESSION_COOKIES_AGE = 120

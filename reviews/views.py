@@ -33,23 +33,27 @@ class ReviewView(View):
 
 # Templates rendering way 1
 
-# class ThankyouView(View):
+class ThankyouView(View):
 
-#     def get(self, request):
-#         return render(request, "reviews/thank_you.html")
+    def get(self, request):
+        return render(request, "reviews/thank_you.html")
 
 # Templates rendering way 2 : template rendering
 
-class ThankyouView(TemplateView):
-    template_name = "reviews/thank_you.html"
+###
+# class ThankyouView(TemplateView):
+#     template_name = "reviews/thank_you.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["message"] = "This works"
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context["message"] = "This works"
+#         return context
+###
 
 
 # format to use list views
+
+
 class ReviewListView(ListView):
     template_name = "reviews/reviews_list.html"
     model = Reviews
@@ -62,7 +66,9 @@ class ReviewListView(ListView):
         data = base_query.filter(rating__gte=4)
         return data
 
-# METHOD 1: Using template view
+
+###
+
 class ReviewDetailView(TemplateView):
     template_name = "reviews/review_detail.html"
 
@@ -73,5 +79,14 @@ class ReviewDetailView(TemplateView):
         context["review"] = review
         return context
 
+##
 
 
+# ###
+# class AddFavoriteView(View):
+#     def post(self, request):
+#         review_id = request.POST["review_id"]
+#         request.session["favorite_review"] = review_id
+#         return HttpResponseRedirect(review_id)
+
+###
